@@ -1,0 +1,72 @@
+VAR N;
+
+    FUNCTION J;
+    BEGIN
+        IF (N=1) THEN J:=7
+        ELSE
+            IF (N=6) THEN J:=0;
+    END;
+
+
+2 INT 0 3
+3 LOD 1 3
+4 LIT 0 1
+5 OPR 0 8
+6 JPC 0 10
+7 LIT 0 7
+8 STO 0 -1
+9 JMP 0 16
+10 LOD 1 3
+11 LIT 0 6
+12 OPR 0 8
+13 JPC 0 16
+14 LIT 0 0
+15 STO 0 -1
+16 OPR 0 0
+
+    FUNCTION S;
+    BEGIN
+        IF (N=0) THEN S:=-1
+        ELSE
+            IF (N=1) THEN S:=1;
+    END;
+
+
+18 INT 0 3
+19 LOD 1 3
+20 LIT 0 0
+21 OPR 0 8
+22 JPC 0 27
+23 LIT 0 1
+24 OPR 0 1
+25 STO 0 -1
+26 JMP 0 33
+27 LOD 1 3
+28 LIT 0 1
+29 OPR 0 8
+30 JPC 0 33
+31 LIT 0 1
+32 STO 0 -1
+33 OPR 0 0
+
+VAR 
+    X,Y;
+
+BEGIN
+    X:=CALL J;
+    Y:=CALL S;
+END.
+
+34 INT 0 6
+35 INT 0 1
+36 CAL 0 2
+37 STO 0 4
+38 INT 0 1
+39 CAL 0 18
+40 STO 0 5
+41 OPR 0 0
+
+Successful compilation!
+
+Start PL/0
+End PL/0
